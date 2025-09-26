@@ -4,7 +4,11 @@ export const MovieCard = ({ movie }) => (
   <div className="card" data-cy="Movie">
     <div className="card-image">
       <figure className="image is-4by3">
-        <img data-cy="MovieImage" src={movie.imgUrl} alt="Film logo" />
+        <img
+          data-cy="MovieImage"
+          src={movie.imgUrl}
+          alt={`${movie.title} poster`}
+        />
       </figure>
     </div>
 
@@ -12,7 +16,7 @@ export const MovieCard = ({ movie }) => (
       <div className="media">
         <div className="media-left">
           <figure className="image is-48x48">
-            <img src={movie.imdbUrl} alt="imdb" />
+            <img src="/images/imdb-logo.jpeg" alt="imdb" />
           </figure>
         </div>
 
@@ -29,6 +33,8 @@ export const MovieCard = ({ movie }) => (
         <a
           href={`https://www.imdb.com/title/${movie.imdbId}`}
           data-cy="MovieLink"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           IMDB
         </a>
